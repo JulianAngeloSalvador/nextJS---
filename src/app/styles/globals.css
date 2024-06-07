@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-primary text-main-fs text-secondary font-poppins;
+    @apply bg-primary text-main-fs text-secondary font-montserrat;
   }
 
   h1 {
