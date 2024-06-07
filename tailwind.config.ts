@@ -18,16 +18,20 @@ const config: Config = {
     },
     fontSize: {
       headline: "clamp(4rem, 5vw + 1rem, 5rem)",
-      subheadline: "clamp(1.85rem, 5vw + 1rem, 2.15rem)",
+      subheadline: "clamp(3rem, 5vw + 1rem, 4rem)",
       caption: "clamp(1.35rem, 1vw + 1rem, 1.5rem)",
       "main-fs": "clamp(1.05rem, 1vw + 1rem, 1.15rem)",
     },
+
     transitionDuration: {
       fast: ".35s",
       normal: ".5s",
       slow: ".75s",
     },
     extend: {
+      screens: {
+        sm: "540px",
+      },
       fontFamily: {
         "zen-old": ['"var(--font-zen-old)"', ...defaultTheme.fontFamily.sans],
         poppins: ['"var(--font-poppins)"', ...defaultTheme.fontFamily.sans],
@@ -52,7 +56,7 @@ const config: Config = {
       light: {
         primary: "#DEDEDE",
         secondary: "#101010",
-        tertiary: "#ABABAB",
+        tertiary: "#8F8F8F",
         extra: "#AFC2D5",
       },
       dark: {
