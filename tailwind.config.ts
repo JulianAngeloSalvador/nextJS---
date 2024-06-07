@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 import { createThemes } from "tw-colors";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -44,6 +45,9 @@ const config: Config = {
     },
   },
   plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("children", "&>*");
+    }),
     createThemes({
       light: {
         primary: "#DEDEDE",
