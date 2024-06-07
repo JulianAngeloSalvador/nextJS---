@@ -1,13 +1,19 @@
-import { Zen_Old_Mincho, Noto_Serif_JP, Poppins } from "next/font/google";
+import { Poppins, Nanum_Myeongjo, Montserrat } from "next/font/google";
 
-export const zenOld = Zen_Old_Mincho({
-  weight: ["400", "600", "900"],
-  variable: "--font-zen-old",
+// export const nanumMyeongjo = Nanum_Myeongjo({
+//   weight: ["400", "700", "800"],
+//   variable: "--font-nanum-myeongjo",
+//   subsets: ["latin"],
+// });
+
+export const poppins = Poppins({
+  weight: ["100", "400", "600", "900"],
+  variable: "--font-poppins",
   subsets: ["latin"],
 });
 
-export const poppins = Poppins({
-  weight: ["400", "600", "900"],
-  variable: "--font-poppins",
+export const montserrat = Montserrat({
+  weight: ["100", "400", "600", "900"],
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
