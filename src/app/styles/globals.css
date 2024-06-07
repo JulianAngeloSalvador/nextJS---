@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary text-main-fs text-secondary font-poppins;
+  }
+
+  h1 {
+    @apply font-bold text-headline;
+  }
+  h2 {
+    @apply text-subheadline;
+  }
+  h3 {
+    @apply text-caption;
+  }
+}
