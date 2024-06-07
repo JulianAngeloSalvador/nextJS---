@@ -21,6 +21,7 @@ const config: Config = {
       subheadline: "clamp(3rem, 5vw + 1rem, 4rem)",
       caption: "clamp(1.35rem, 1vw + 1rem, 1.5rem)",
       "main-fs": "clamp(1.05rem, 1vw + 1rem, 1.15rem)",
+      icon: "clamp(2.05rem, 1vw + 1rem, 2.15rem)",
     },
 
     transitionDuration: {
