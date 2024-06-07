@@ -16,7 +16,7 @@ const config: Config = {
       bold: "900",
     },
     fontSize: {
-      headline: "clamp(3rem, 5vw + 1rem, 5rem)",
+      headline: "clamp(4rem, 5vw + 1rem, 5rem)",
       subheadline: "clamp(1.85rem, 5vw + 1rem, 2.15rem)",
       caption: "clamp(1.35rem, 1vw + 1rem, 1.5rem)",
       "main-fs": "clamp(1.05rem, 1vw + 1rem, 1.15rem)",
@@ -32,6 +32,8 @@ const config: Config = {
         poppins: ['"var(--font-poppins)"', ...defaultTheme.fontFamily.sans],
       },
       width: {
+        "fluid-150": "min(150px, 100%)",
+        "fluid-200": "min(200px, 100%)",
         "fluid-800": "min(800px, 100% - 1rem)",
         "fluid-1200": "min(1200px, 100% - 1rem)",
         "fluid-1400": "min(1400px, 100% - 1rem)",
