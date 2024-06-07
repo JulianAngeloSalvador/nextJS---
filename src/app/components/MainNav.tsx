@@ -32,7 +32,7 @@ export default function MainNav() {
               href={link.path}
               className={`flex text-center font-poppins font-semibold hover:text-cta xl:hover:text-secondary transition-colors duration-fast ease-in-out py-3 px-2 sm:pb-0 ${
                 pathname === link.path
-                  ? "text-cta hover:text-cta"
+                  ? "text-cta hover:!text-cta"
                   : "text-tertiary"
               }`}
             >
