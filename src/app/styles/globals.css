@@ -16,4 +16,7 @@
   h3 {
     @apply text-caption;
   }
+  h4 {
+    @apply text-title;
+  }
 }
