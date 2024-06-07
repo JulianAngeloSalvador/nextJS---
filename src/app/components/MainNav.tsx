@@ -12,12 +12,12 @@ const paths = [
   },
   {
     title: "Vocabularies",
-    path: "/vocabularies",
+    path: "/dashboard/vocabularies",
     icon: "streamline:dictionary-language-book",
   },
   {
     title: "Learn",
-    path: "/learn",
+    path: "/dashboard/learn",
     icon: "tabler:book-2",
   },
 ];

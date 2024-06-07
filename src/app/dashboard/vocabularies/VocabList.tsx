@@ -27,7 +27,7 @@ export default async function VocabList() {
             <h1 className="flex-grow grid place-content-center text-nowrap sm:text-subheadline">
               {vocab.kanji ? vocab.kanji : vocab.hiragana}
             </h1>
-            <h3>{vocab.title}</h3>
+            <h4>{vocab.title}</h4>
           </Link>
         </li>
       ))}
