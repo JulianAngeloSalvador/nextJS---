@@ -44,3 +44,11 @@ type Vocabularies = {
   ];
   contentDescription: string;
 };
+
+type AuthFields = {
+  name?: string;
+  email: string;
+  password?: string;
+};
+
+type LoginData = Pick<AuthFields, "email" | "password">;
