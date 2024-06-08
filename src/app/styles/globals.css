@@ -20,3 +20,27 @@
     @apply text-title;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: theme(colors.extra);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme(colors.secondary);
+  border-radius: 10rem;
+}
+
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  -webkit-text-fill-color: theme(colors.secondary);
+  -webkit-box-shadow: 0 0 0px 1000px theme(colors.primary) inset;
+}
+
+:-webkit-autofill::selection {
+  -webkit-text-fill-color: theme(colors.primary);
+}
