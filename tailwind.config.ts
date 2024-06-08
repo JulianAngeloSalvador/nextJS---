@@ -62,6 +62,9 @@ const config: Config = {
         dark: "#101010",
         cta: "#00AAAA",
       },
+      boxShadow: {
+        "custom-shadow": "0 .75rem .5rem theme(colors.tertiary)",
+      },
     },
   },
   plugins: [
