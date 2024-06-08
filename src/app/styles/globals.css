@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-primary text-main-fs text-secondary font-montserrat;
+    @apply bg-primary text-main-fs text-secondary font-montserrat antialiased h-full relative after:absolute after:top-0 after:right-0 after:w-3/5 after:md:w-1/4 after:aspect-square after:bg-red-500 after:rounded-bl-full selection:bg-secondary selection:text-primary;
   }
 
   h1 {

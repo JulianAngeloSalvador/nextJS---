@@ -13,10 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
-      <body className={`${montserrat.className} antialiased h-full`}>
-        {children}
-      </body>
+    <html lang="en" data-theme="light">
+      <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   );
 }
