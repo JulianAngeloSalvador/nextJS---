@@ -14,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${montserrat.className} antialiased`}>{children}</body>
+      <body
+        className={`${montserrat.className} antialiased md:overflow-y-clip`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

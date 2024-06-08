@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Dashboard() {
   return (
-    <section>
-      <h1>DASHBOARD</h1>
+    <section className="dashboard-route">
+      <h3>DASHBOARD</h3>
     </section>
   );
 }

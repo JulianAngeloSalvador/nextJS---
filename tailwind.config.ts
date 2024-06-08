@@ -57,6 +57,7 @@ const config: Config = {
         "fluid-1300": "min(1300px, 100%)",
         "fluid-1400": "min(1400px, 100%)",
         "fluid-1500": "min(1500px, 100%)",
+        "fluid-layout": "var(--fluid-layout)",
       },
       colors: {
         light: "#DEDEDE",
