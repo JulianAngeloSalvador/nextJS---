@@ -31,8 +31,17 @@ export default function MainNav() {
         <li className="flex-grow">
           <Link
             href={"/"}
-            className={`flex text-center font-poppins font-semibold hover:text-cta xl:hover:text-secondary transition-colors duration-fast ease-in-out py-3 px-2 md:pb-0 `}
+            className={`flex items-center gap-x-1 text-center font-poppins font-semibold hover:text-cta xl:hover:text-secondary transition-colors duration-fast ease-in-out py-3 px-2 md:pb-0 `}
           >
+            <Image
+              src="/raku.svg"
+              alt="Site Logo"
+              width={50}
+              height={50}
+              placeholder="blur"
+              className="hidden md:block"
+              blurDataURL="/raku.svg"
+            />
             <span className={` hidden md:inline-block font-bold text-caption`}>
               <span className="text-red-700">Japan</span>
               <span>Ease</span>
