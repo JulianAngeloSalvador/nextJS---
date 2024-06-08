@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className="min-h-dvh w-fluid-1500 mx-auto relative flex items-center">
-      <article className="text-balance p-4 md:p-10 leading-[1.15]">
+      <article className="text-balance p-4 md:p-10 leading-[1.15] z-10">
         <h2 className="font-bold text-caption sm:text-subheadline 2xl:text-headline">
           Beyond Sushi & Anime
         </h2>
