@@ -34,6 +34,7 @@ const config: Config = {
     extend: {
       screens: {
         sm: "540px",
+        md: "900px",
       },
       fontFamily: {
         "nanum-myeongjo": [
