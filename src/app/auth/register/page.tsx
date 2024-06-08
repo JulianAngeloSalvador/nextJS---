@@ -3,8 +3,13 @@
 import Link from "next/link";
 import FormField from "../components/FormField";
 import { useState, useEffect } from "react";
+import { signup } from "../actions";
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { message: string };
+}) {
   const [registerData, setRegisterData] = useState<AuthFields>({
     name: "",
     email: "",
@@ -45,6 +50,17 @@ export default function LoginPage() {
           placeholder="Enter Password"
           dataStateSetter={setRegisterData}
         />
+        {searchParams.message && (
+          <small className="text-red-600 font-semibold text-center">
+            {searchParams.message}
+          </small>
+        )}
+        <button
+          formAction={signup}
+          className="bg-secondary self-center text-primary px-10 py-2 rounded-full font-semibold"
+        >
+          Register
+        </button>
       </form>
       <small className="text-sm text-center mt-4 flex justify-center items-center gap-x-2">
         Already a member?{" "}

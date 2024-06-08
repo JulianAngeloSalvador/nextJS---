@@ -3,16 +3,18 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FormField from "../components/FormField";
+import { login } from "../actions";
+import { useSearchParams } from "next/navigation";
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { message: string };
+}) {
   const [loginData, setLoginData] = useState<LoginData>({
     email: "",
     password: "",
   });
-
-  useEffect(() => {
-    console.log(loginData);
-  }, [loginData]);
 
   return (
     <section className="p-6 flex flex-col gap-y-4">
@@ -36,6 +38,17 @@ export default function LoginPage() {
           placeholder="Enter Password"
           dataStateSetter={setLoginData}
         />
+        {searchParams.message && (
+          <small className="text-red-600 font-semibold text-center">
+            {searchParams.message}
+          </small>
+        )}
+        <button
+          formAction={login}
+          className="bg-secondary self-center text-primary px-10 py-2 rounded-full font-semibold"
+        >
+          Log In
+        </button>
       </form>
       <small className="text-sm text-center mt-4 flex justify-center items-center gap-x-2">
         Not registered yet?{" "}

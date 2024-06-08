@@ -41,6 +41,7 @@ export default function FormField({
         <Icon icon={icon} />
       </label>
       <input
+        minLength={type === "password" ? 6 : 0}
         type={type}
         id={id}
         name={name}
