@@ -17,16 +17,17 @@ const config: Config = {
       bold: "900",
     },
     fontSize: {
-      headline: "clamp(4rem, 5vw + 1rem, 5rem)",
+      headline: "clamp(4.5rem, 5vw + 1rem, 6rem)",
       subheadline: "clamp(3rem, 5vw + 1rem, 4rem)",
       caption: "clamp(2.35rem, 1vw + 1rem, 3rem)",
       title: "clamp(1.35rem, 1vw + 1rem, 1.5rem)",
       "main-fs": "clamp(1.05rem, 1vw + 1rem, 1.15rem)",
       icon: "clamp(2.05rem, 1vw + 1rem, 2.15rem)",
+      sm: "clamp(.7rem, 1vw + .8rem, .9rem)",
     },
 
     transitionDuration: {
-      fast: ".35s",
+      fast: ".25s",
       normal: ".5s",
       slow: ".75s",
     },
