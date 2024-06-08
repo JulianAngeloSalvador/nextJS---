@@ -43,3 +43,9 @@ export async function signup(formData: FormData) {
   revalidatePath("/", "layout");
   redirect("/auth/login");
 }
+
+export async function signOut() {
+  const supabase = createClient();
+  await supabase.auth.signOut();
+  redirect("/auth/login");
+}

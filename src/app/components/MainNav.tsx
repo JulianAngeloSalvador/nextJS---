@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify-icon/react";
 import { nanumMyeongjo } from "../fonts/fonts";
 import Image from "next/image";
+import { signOut } from "../auth/actions";
+import { createClient } from "../supabaseConfig/server";
 
 const paths = [
   {
@@ -23,8 +25,9 @@ const paths = [
     icon: "tabler:book-2",
   },
 ];
-export default function MainNav() {
+export default async function MainNav() {
   const pathname = usePathname();
+
   return (
     <nav className="w-full md:w-fluid-layout mx-0 md:mx-auto fixed md:relative bottom-0 md:p-4 after:absolute after:h-0.5 after:bg-tertiary after:w-full after:left-0 after:top-0 md:after:hidden after:rounded-full flex justify-center items-center md:justify-start">
       <ul className="flex gap-x-2 md:gap-x-8 flex-grow md:flex-grow-0 items-center  w-full">
@@ -73,14 +76,17 @@ export default function MainNav() {
           </li>
         ))}
         <li className="flex-grow">
-          <button
-            className={`md:ml-auto w-full md:w-fit flex items-center gap-x-1 text-center font-poppins font-semibold md:bg-secondary text-primary transition-colors duration-fast ease-in-out py-3 px-2 md:py-2 md:px-6 md:ring-2 ring-offset-1 ring-secondary rounded-full text-sm text-nowrap md:scale-[.85] md:hover:scale-100 md:transition-all md:duration-fast md:ease-in-out md:hover:shadow-custom-shadow`}
-          >
-            <span className="hidden md:block">Log Out</span>
-            <span className="inline-block md:hidden text-icon w-full text-center text-tertiary">
-              <Icon icon="majesticons:logout-line" />
-            </span>
-          </button>
+          <form>
+            <button
+              formAction={signOut}
+              className={`md:ml-auto w-full md:w-fit flex items-center gap-x-1 text-center font-poppins font-semibold md:bg-secondary text-primary transition-colors duration-fast ease-in-out py-3 px-2 md:py-2 md:px-6 md:ring-2 ring-offset-1 ring-secondary rounded-full text-sm text-nowrap md:scale-[.85] md:hover:scale-100 md:transition-all md:duration-fast md:ease-in-out md:hover:shadow-custom-shadow`}
+            >
+              <span className="hidden md:block">Log Out</span>
+              <span className="inline-block md:hidden text-icon w-full text-center text-tertiary">
+                <Icon icon="majesticons:logout-line" />
+              </span>
+            </button>
+          </form>
         </li>
       </ul>
     </nav>
