@@ -1,20 +1,30 @@
-"use client";
+// "use client";
 
 import Link from "next/link";
 import { useState } from "react";
 import FormField from "../components/FormField";
 import { login } from "../actions";
 import { nanumMyeongjo } from "@/app/fonts/fonts";
+import { createClient } from "@/app/supabaseConfig/server";
+import { redirect } from "next/navigation";
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
   searchParams: { message: string };
 }) {
-  const [loginData, setLoginData] = useState<LoginData>({
-    email: "",
-    password: "",
-  });
+  // const [loginData, setLoginData] = useState<LoginData>({
+  //   email: "",
+  //   password: "",
+  // });
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user) {
+    redirect("/dashboard");
+  }
 
   return (
     <>
@@ -29,18 +39,18 @@ export default function LoginPage({
             type="email"
             icon="tabler:mail-filled"
             name="email"
-            value={loginData.email}
+            // value={loginData.email}
             placeholder="Email"
-            dataStateSetter={setLoginData}
+            // dataStateSetter={setLoginData}
           />
           <FormField
             id="password"
             type="password"
             name="password"
             icon="mingcute:lock-fill"
-            value={loginData.password!}
+            // value={loginData.password!}
             placeholder="Enter Password"
-            dataStateSetter={setLoginData}
+            // dataStateSetter={setLoginData}
           />
           {searchParams.message && (
             <small className="text-red-600 font-semibold text-center">

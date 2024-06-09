@@ -1,21 +1,32 @@
-"use client";
+// "use client";
 
 import Link from "next/link";
 import FormField from "../components/FormField";
-import { useState } from "react";
+// import { useState } from "react";
 import { signup } from "../actions";
 import { nanumMyeongjo } from "@/app/fonts/fonts";
+import { createClient } from "@/app/supabaseConfig/server";
+import { redirect } from "next/navigation";
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
   searchParams: { message: string };
 }) {
-  const [registerData, setRegisterData] = useState<AuthFields>({
-    name: "",
-    email: "",
-    password: "",
-  });
+  // const [registerData, setRegisterData] = useState<AuthFields>({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  // });
+
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user) {
+    redirect("/dashboard");
+  }
 
   return (
     <>
@@ -30,27 +41,27 @@ export default function LoginPage({
             type="name"
             icon="bxs:user"
             name="name"
-            value={registerData.name!}
+            // value={registerData.name!}
             placeholder="Name"
-            dataStateSetter={setRegisterData}
+            // dataStateSetter={setRegisterData}
           />
           <FormField
             id="email"
             type="email"
             icon="tabler:mail-filled"
             name="email"
-            value={registerData.email}
+            // value={registerData.email}
             placeholder="Email"
-            dataStateSetter={setRegisterData}
+            // dataStateSetter={setRegisterData}
           />
           <FormField
             id="password"
             type="password"
             name="password"
             icon="mingcute:lock-fill"
-            value={registerData.password!}
+            // value={registerData.password!}
             placeholder="Enter Password"
-            dataStateSetter={setRegisterData}
+            // dataStateSetter={setRegisterData}
           />
           {searchParams.message && (
             <small className="text-red-600 font-semibold text-center">

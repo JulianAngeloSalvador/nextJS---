@@ -8,9 +8,9 @@ interface FieldProps {
   icon: string;
   type: string;
   name: string;
-  value: string;
+  // value: string;
   placeholder: string;
-  dataStateSetter: React.Dispatch<SetStateAction<AuthFields | LoginData>>;
+  // dataStateSetter: React.Dispatch<SetStateAction<AuthFields | LoginData>>;
 }
 
 export default function FormField({
@@ -18,20 +18,20 @@ export default function FormField({
   icon,
   type,
   name,
-  value,
+  // value,
   placeholder,
-  dataStateSetter,
-}: FieldProps) {
+}: // dataStateSetter,
+FieldProps) {
   // onChangeHandler
-  const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const fieldName = e.target.name;
-    const fieldValue = e.target.value;
+  // const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   const fieldName = e.target.name;
+  //   const fieldValue = e.target.value;
 
-    dataStateSetter((fieldValues) => ({
-      ...fieldValues,
-      [fieldName]: fieldValue,
-    }));
-  };
+  //   dataStateSetter((fieldValues) => ({
+  //     ...fieldValues,
+  //     [fieldName]: fieldValue,
+  //   }));
+  // };
 
   return (
     <fieldset className="relative flex items-center gap-x-3 text-tertiary py-3 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-tertiary ">
@@ -43,9 +43,9 @@ export default function FormField({
         type={type}
         id={id}
         name={name}
-        value={value}
+        // value={value}
         placeholder={placeholder}
-        onChange={handleFieldChange}
+        // onChange={handleFieldChange}
         required
         className="outline-none border-none bg-transparent text-secondary font-semibold placeholder:text-tertiary placeholder:font-normal"
       />
