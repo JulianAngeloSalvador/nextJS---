@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@iconify-icon/react";
-import { nanumMyeongjo } from "../fonts/fonts";
 import Image from "next/image";
-import { signOut } from "../auth/actions";
-import { createClient } from "../supabaseConfig/server";
 
 const paths = [
   {
@@ -76,9 +73,9 @@ export default async function MainNav() {
           </li>
         ))}
         <li className="flex-grow">
-          <form>
+          <form action={"/auth/signout"} method="POST">
             <button
-              formAction={signOut}
+              type="submit"
               className={`md:ml-auto w-full md:w-fit flex items-center gap-x-1 text-center font-poppins font-semibold md:bg-secondary text-primary transition-colors duration-fast ease-in-out py-3 px-2 md:py-2 md:px-6 md:ring-2 ring-offset-1 ring-secondary rounded-full text-sm text-nowrap md:scale-[.85] md:hover:scale-100 md:transition-all md:duration-fast md:ease-in-out md:hover:shadow-custom-shadow`}
             >
               <span className="hidden md:block">Log Out</span>
