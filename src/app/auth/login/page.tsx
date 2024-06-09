@@ -1,7 +1,4 @@
-// "use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import FormField from "../components/FormField";
 import { login } from "../actions";
 import { nanumMyeongjo } from "@/app/fonts/fonts";
@@ -13,10 +10,6 @@ export default async function LoginPage({
 }: {
   searchParams: { message: string };
 }) {
-  // const [loginData, setLoginData] = useState<LoginData>({
-  //   email: "",
-  //   password: "",
-  // });
   const supabase = createClient();
   const {
     data: { user },
@@ -39,18 +32,14 @@ export default async function LoginPage({
             type="email"
             icon="tabler:mail-filled"
             name="email"
-            // value={loginData.email}
             placeholder="Email"
-            // dataStateSetter={setLoginData}
           />
           <FormField
             id="password"
             type="password"
             name="password"
             icon="mingcute:lock-fill"
-            // value={loginData.password!}
             placeholder="Enter Password"
-            // dataStateSetter={setLoginData}
           />
           {searchParams.message && (
             <small className="text-red-600 font-semibold text-center">
