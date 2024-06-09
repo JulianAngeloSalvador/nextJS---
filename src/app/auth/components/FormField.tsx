@@ -23,9 +23,7 @@ export default function FormField({
   dataStateSetter,
 }: FieldProps) {
   // onChangeHandler
-  const handleFieldChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
 
