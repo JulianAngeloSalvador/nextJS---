@@ -22,7 +22,7 @@ const paths = [
     icon: "tabler:book-2",
   },
 ];
-export default async function MainNav() {
+export default function MainNav() {
   const pathname = usePathname();
 
   return (
