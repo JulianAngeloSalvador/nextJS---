@@ -24,6 +24,7 @@ const config: Config = {
       "main-fs": "clamp(1.05rem, 1vw + 1rem, 1.15rem)",
       icon: "clamp(2.05rem, 1vw + 1rem, 2.15rem)",
       sm: "clamp(.7rem, 1vw + .8rem, .9rem)",
+      xs: "clamp(.25rem, 1vw + .25rem, .5rem)",
     },
 
     transitionDuration: {
@@ -50,6 +51,7 @@ const config: Config = {
       width: {
         "fluid-150": "min(150px, 100%)",
         "fluid-200": "min(200px, 100%)",
+        "fluid-300": "min(300px, 100%)",
         "fluid-400": "min(400px, 100%)",
         "fluid-500": "min(500px, 100%)",
         "fluid-600": "min(600px, 100%)",
@@ -73,6 +75,9 @@ const config: Config = {
   plugins: [
     plugin(function ({ addVariant }) {
       addVariant("children", "&>*");
+      addVariant("grandchildren", "&>*>*");
+      addVariant("hocus", ["&:hover", "&:focus"]);
+      addVariant("hocus-within", ["&:hover", "&:focus-within"]);
     }),
     createThemes({
       light: {
