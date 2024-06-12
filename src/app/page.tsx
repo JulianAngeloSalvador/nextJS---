@@ -13,7 +13,7 @@ export default function Home() {
           </h3>
           <Link
             href={"/auth/login"}
-            className="inline-block bg-secondary text-primary ring-4 ring-secondary ring-offset-1 py-3 px-16 rounded-full mt-8 font-semibold text-title 2xl:text-caption scale-[.9] hover:scale-100 active:scale-[.5] transition-all duration-fast hover:shadow-custom-shadow select-none"
+            className="inline-block bg-secondary text-primary ring-4 ring-secondary ring-offset-1 py-3 px-16 rounded-full mt-8 font-semibold text-title 2xl:text-caption scale-[.9] hover:scale-100 active:scale-[.85] transition-all duration-fast hover:shadow-custom-shadow select-none"
           >
             Let's Go!
           </Link>
