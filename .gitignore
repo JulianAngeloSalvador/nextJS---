@@ -38,3 +38,6 @@ next-env.d.ts
 
 # data
 _data
+
+#test_files
+public/testImg.png
