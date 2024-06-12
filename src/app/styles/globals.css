@@ -27,6 +27,15 @@
   }
 }
 
+@layer components {
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: theme(fontSize.xs) solid transparent;
+    border-right: theme(fontSize.xs) solid transparent;
+    border-top: theme(fontSize.xs) solid theme(colors.tertiary);
+  }
+}
 :root {
   --fluid-layout: min(1300px, 100% - 4rem);
 }
