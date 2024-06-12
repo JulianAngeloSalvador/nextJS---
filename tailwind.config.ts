@@ -66,7 +66,7 @@ const config: Config = {
         cta: "#00AAAA",
       },
       boxShadow: {
-        "custom-shadow": "0 .75rem .5rem theme(colors.tertiary)",
+        "custom-shadow": "0 .75rem .5rem theme(colors.neutral.400)",
       },
     },
   },
