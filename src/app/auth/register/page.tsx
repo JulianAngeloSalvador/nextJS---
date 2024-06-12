@@ -1,9 +1,8 @@
 import Link from "next/link";
-import FormField from "../components/FormField";
-import { signup } from "../actions";
 import { nanumMyeongjo } from "@/app/fonts/fonts";
 import { createClient } from "@/app/supabaseConfig/server";
 import { redirect } from "next/navigation";
+import Form from "../components/Form";
 
 export default async function LoginPage({
   searchParams,
@@ -26,40 +25,13 @@ export default async function LoginPage({
       </h1>
       <section className="p-6 flex flex-col gap-y-4">
         <h4 className="font-semibold text-center">Register</h4>
-        <form action="" className="flex flex-col gap-y-6">
-          <FormField
-            id="name"
-            type="name"
-            icon="bxs:user"
-            name="name"
-            placeholder="Name"
-          />
-          <FormField
-            id="email"
-            type="email"
-            icon="tabler:mail-filled"
-            name="email"
-            placeholder="Email"
-          />
-          <FormField
-            id="password"
-            type="password"
-            name="password"
-            icon="mingcute:lock-fill"
-            placeholder="Enter Password"
-          />
+        <Form authLogin={false}>
           {searchParams.message && (
             <small className="text-red-600 font-semibold text-center">
               {searchParams.message}
             </small>
           )}
-          <button
-            formAction={signup}
-            className="bg-secondary self-center text-primary px-10 py-2 rounded-full font-semibold"
-          >
-            Register
-          </button>
-        </form>
+        </Form>
         <small className="text-sm text-center mt-4 flex justify-center items-center gap-x-2">
           Already a member?{" "}
           <Link
