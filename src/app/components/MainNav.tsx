@@ -22,7 +22,9 @@ const paths = [
     icon: "tabler:book-2",
   },
 ];
-export default function MainNav() {
+export default function MainNav({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
 
   return (
@@ -36,13 +38,13 @@ export default function MainNav() {
             <Image
               src="/raku.svg"
               alt="Site Logo"
-              width={50}
-              height={50}
+              width={30}
+              height={30}
               placeholder="blur"
-              className="hidden md:block min-w-[50px] aspect-square"
+              className="hidden md:block min-w-[40px] aspect-square"
               blurDataURL="/raku.svg"
             />
-            <span className={` hidden md:inline-block font-bold text-caption`}>
+            <span className={` hidden md:inline-block font-bold text-title`}>
               <span className="text-red-700">Japan</span>
               <span>Ease</span>
             </span>
@@ -73,7 +75,7 @@ export default function MainNav() {
           </li>
         ))}
         <li className="flex-grow">
-          <form action={"/auth/signout"} method="POST">
+          {/* <form action={"/auth/signout"} method="POST">
             <button
               type="submit"
               className={`md:ml-auto w-full md:w-fit flex items-center gap-x-1 text-center font-poppins font-semibold md:bg-secondary text-primary transition-colors duration-fast ease-in-out py-3 px-2 md:py-2 md:px-6 md:ring-2 ring-offset-1 ring-secondary rounded-full text-sm text-nowrap md:scale-[.85] md:hover:scale-100 md:transition-all md:duration-fast md:ease-in-out md:hover:shadow-custom-shadow`}
@@ -83,7 +85,8 @@ export default function MainNav() {
                 <Icon icon="majesticons:logout-line" />
               </span>
             </button>
-          </form>
+          </form> */}
+          {children}
         </li>
       </ul>
     </nav>
