@@ -9,7 +9,7 @@ export default function DashboardLayout({
         <MainNav />
       </header>
       <div className="hidden md:block absolute w-fluid-layout mx-auto h-dvh inset-0 border-l-2 border-r-2 border-secondary pointer-events-none z-10" />
-      <main className="p-4 w-fluid-layout mx-0 sm:mx-auto md:max-h-[90dvh] md:overflow-auto">
+      <main className="w-fluid-layout mx-0 sm:mx-auto md:max-h-[90dvh] md:overflow-auto">
         {children}
       </main>
       <div className="h-dvh hidden md:block w-full bg-transparent overflow-hidden pointer-events-none absolute inset-0 after:absolute after:w-full after:bg-primary/55 after:backdrop-blur-sm after:h-full after:left-0 after:top-full after:-translate-y-14 after:border-t-2 after:border-secondary" />
