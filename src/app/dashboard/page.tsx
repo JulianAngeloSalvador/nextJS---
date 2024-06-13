@@ -1,8 +1,6 @@
 import React from "react";
 import { createClient } from "../supabaseConfig/server";
 import { redirect } from "next/navigation";
-import { capitalizeFirst } from "../utils";
-import Link from "next/link";
 
 export default async function Dashboard() {
   const supabase = createClient();
@@ -19,9 +17,7 @@ export default async function Dashboard() {
       <header className="flex justify-between items-center">
         <h5 className="font-semibold flex gap-x-2">
           <span>Konnichiwa,</span>
-          <span className="text-red-700">{`${capitalizeFirst(
-            user.user_metadata.last_name
-          )}-San`}</span>
+          <span className="text-red-700">{`${user.user_metadata.last_name}-San`}</span>
         </h5>
       </header>
     </section>

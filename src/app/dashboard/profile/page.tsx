@@ -2,22 +2,20 @@ import { createClient } from "@/app/supabaseConfig/server";
 import Dialog from "./components/Dialog";
 import Image from "next/image";
 import { capitalizeFirst } from "@/app/utils";
+import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
   const supabase = createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  if (!user) {
+    redirect("/auth/login");
+  }
   const userData = user?.user_metadata;
-  const name = `${capitalizeFirst(userData!.first_name)} ${capitalizeFirst(
-    userData!.last_name
-  )}`;
+  const name = `${userData?.first_name} ${userData?.last_name}`;
 
-  return !user ? (
-    <div>
-      <h2>Cannot display content</h2>
-    </div>
-  ) : (
+  return (
     <main>
       {/* <Dialog user={user} /> */}
       <section>

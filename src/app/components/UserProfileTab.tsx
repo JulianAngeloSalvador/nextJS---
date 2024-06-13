@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { createClient } from "../supabaseConfig/server";
 import MainNav from "./MainNav";
-import { capitalizeFirst } from "../utils";
 
 export default async function UserProfileTab() {
   const supabase = createClient();
@@ -10,9 +9,7 @@ export default async function UserProfileTab() {
     data: { user },
   } = await supabase.auth.getUser();
   const userData = user?.user_metadata;
-  const name = `${capitalizeFirst(userData!.first_name)} ${capitalizeFirst(
-    userData!.last_name
-  )}`;
+  const name = `${userData?.first_name} ${userData?.last_name}`;
 
   return (
     <MainNav>
